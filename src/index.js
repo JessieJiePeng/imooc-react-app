@@ -14,6 +14,8 @@ import {
 import Login from './container/login/login.js';
 import Register from './container/register/register.js';
 import AuthRoute from './component/authroute/authroute.js';
+import BossInfo from './container/bossinfo/bossinfo.js';
+import GeniusInfo from './container/geniusinfo/geniusinfo.js'
 import reducers from './reducer.js';
 import './config';
 import './index.css'  
@@ -37,9 +39,12 @@ ReactDOM.render(
       <BrowserRouter>
         <div>
           <AuthRoute></AuthRoute>
-          <Route path='/boss' component={Boss}></Route>
+          <Switch>
+          <Route path='/bossinfo' component={BossInfo}></Route>
+          <Route path='/geniusinfo' component={GeniusInfo}></Route>
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
+          </Switch>
         </div>
       </BrowserRouter>
     </Provider>),
